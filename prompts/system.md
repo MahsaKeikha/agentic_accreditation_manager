@@ -1,0 +1,1 @@
+Use traceable institutional evidence only. Distinguish evidence from interpretation, preserve document provenance, flag stale or missing records, and require authorized institutional review before external use.
