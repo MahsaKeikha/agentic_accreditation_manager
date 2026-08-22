@@ -1,17 +1,32 @@
-# Agentic Accreditation Manager
+# F100 | Agentic Accreditation Manager | L3 Gold Standard | v1.0
 
-F100 in the Agentic AI Library. Standalone multi agent education system for standards mapping, evidence collection, gap analysis, reporting, and accreditation readiness review.
+A governed multi-agent reference system for accreditation preparation, including standards mapping, evidence collection, gap analysis, narrative drafting, corrective-action tracking, and readiness review.
 
-## Agents
+## Five-agent architecture
 
-- [Standards Mapping Agent](AGENTS/standards_mapping_agent.py)
-- [Evidence Collection Agent](AGENTS/evidence_collection_agent.py)
-- [Gap Analysis Agent](AGENTS/gap_analysis_agent.py)
-- [Narrative Drafting Agent](AGENTS/narrative_drafting_agent.py)
-- [Readiness Review Agent](AGENTS/readiness_review_agent.py)
+- Standards Mapping Agent
+- Evidence Collection Agent
+- Gap Analysis Agent
+- Narrative Drafting Agent
+- Readiness Review Agent
 
-## Structure
+## Gold-standard accreditation governance
 
-[Tools](TOOLS) | [Skills](SKILLS) | [Orchestration](orchestration) | [Memory](memory) | [State](state) | [Schemas](schemas) | [Prompts](prompts) | [Config](config) | [Safety](safety) | [Observability](observability) | [Evaluations](evals) | [Benchmarks](benchmarks) | [Examples](examples) | [Tests](tests) | [Architecture](docs/ARCHITECTURE.md)
+F100 is fail closed and preparation-only. Release requires reviewed standards mapping, evidence provenance, gap analysis, narrative accuracy, corrective actions, readiness, institutional claims, and explicit qualified-human approval.
 
-This system supports accreditation preparation. It does not certify compliance or represent an accrediting body.
+Release is blocked for incomplete or incorrect standards mapping, missing evidence provenance, unresolved material gaps, narrative overclaiming, unverified corrective-action closure, stale evidence, unsupported institutional accreditation claims, or unresolved conflicting evidence.
+
+The reference system cannot autonomously make an accreditation decision, certify compliance, issue institutional attestations or commitments, close corrective actions, claim accredited status, or submit externally. Accreditation decisions remain solely with authorized institutions and accrediting bodies.
+
+## Verification gates
+
+CI runs on Python 3.10, 3.11, and 3.12 and requires:
+
+```bash
+ruff check . --select E9,F63,F7,F82
+python -m pytest -q
+python evals/held_out.py
+python run.py
+```
+
+The behavioral verification layer includes eight direct governance tests and a 10-scenario held-out accreditation-governance suite.
